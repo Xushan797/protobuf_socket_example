@@ -11,6 +11,9 @@ https://developers.google.com/protocol-buffers/docs/pythontutorial
 command to generate Your Protocol Buffers:
 protoc -I=$SRC_DIR --python_out=$DST_DIR $SRC_DIR/[name_of_the_proto_file].proto
 
+how to test the socket communication:
+python3 server.py
+python3 client.py
 
 Protocol Buffers - Google's data interchange format
 Copyright 2008 Google Inc.
