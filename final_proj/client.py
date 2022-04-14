@@ -26,12 +26,13 @@ while True:
     #     continue
     # inp = open('testxml').read()
     _EncodeVarint(s.send, len(string_message), None)
-    s.sendall(string_message)
+    s.send(string_message)
 
     # if inp == "exit":   # 
     #     print("close connection!")
     #     break
     server_reply = s.recv(1024).decode()
     print(server_reply)
+    break
         
 s.close()

@@ -20,20 +20,21 @@ var_int_buff = []
 while True:     # 
     # client_data = conn.recv(1024).decode()      # 
     # process_data
-    buf = conn.recv(1)
-    var_int_buff += buf
-    print(var_int_buff)
-    msg_len, new_pos = _DecodeVarint32(var_int_buff, 0)
-    if new_pos != 0:
-        break
+    while True:
+        buf = conn.recv(1)
+        var_int_buff += buf
+        msg_len, new_pos = _DecodeVarint32(var_int_buff, 0)
+        if new_pos != 0:
+            break
     print(msg_len)
-    buf_message = conn.recv(msg_len)
+    buf_message = conn.recv(1024)
     tmessage = World_Ups.UConnected()
     tmessage.ParseFromString(buf_message)
     id = tmessage.worldid
     # if client_data == "exit":       # 
     #     exit("end connection")
     # print("from%s and send the message:%s" % (address, client_data))
-    message ='server already receive the message: ' + id
+    message ='server already receive the message: ' + str(id)
     conn.sendall(message.encode())    # feedback
+    break
 conn.close()    # close connection
