@@ -1,0 +1,13 @@
+message entity_attr
+{
+    required int32 attr_id = 1;            // 属性类型标识，比如：标题属性为 1，正文属性为2，图片属性为 3，发现时间属性为4，原始url属性为5 ，父页面属性为 6；
+    required bytes attribute = 2;      // 属性类型描述，比如“标题”，“ 正文”，“图片”，“发现时间”，“原始 url”，“父页面 ”等
+    repeated bytes value = 3;            // 属性值，除“图片”只保留 osskey之外，其他保留原文。考虑到文章中会保留多幅图，所以采用repeated。
+};
+
+message entity_desc
+{
+    required int32 entity_id = 1;                           // 实体类型标识，比如：新闻为 1，小说为2 。
+    required bytes entity_name = 2;                  // 实体名称，比如：新闻主题事件关键词，小说名等。
+    repeated entity_attr attributes = 3;   // 属性描述，格式见entity_attr。
+};

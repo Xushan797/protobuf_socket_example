@@ -1,0 +1,6 @@
+syntax = "proto2";
+
+message Order {
+    string name = 1;
+    OrderTime timestamp = 100;
+}
