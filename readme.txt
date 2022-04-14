@@ -1,3 +1,17 @@
+
+how to use protobuf:
+
+command to install:
+pip install protobuf
+sudo apt-install protobuf-compiler
+
+how to write protocol:
+https://developers.google.com/protocol-buffers/docs/pythontutorial
+
+command to generate Your Protocol Buffers:
+protoc -I=$SRC_DIR --python_out=$DST_DIR $SRC_DIR/[name_of_the_proto_file].proto
+
+
 Protocol Buffers - Google's data interchange format
 Copyright 2008 Google Inc.
 https://developers.google.com/protocol-buffers/
