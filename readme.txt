@@ -3,7 +3,7 @@ how to use protobuf:
 
 command to install:
 pip install protobuf
-sudo apt-install protobuf-compiler
+sudo apt install protobuf-compiler
 
 how to write protocol:
 https://developers.google.com/protocol-buffers/docs/pythontutorial
